@@ -1,0 +1,481 @@
+/* ========================= */
+/* MOVE DANCE ACADEMY        */
+/* RECEPCIÓN PREMIUM         */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* ========================= */
+/* FONDO PREMIUM             */
+/* ========================= */
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        -45deg,
+        #ffffff,
+        #fff5fb,
+        #ffe8f4,
+        #fff0fa,
+        #ffffff
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientFlow 20s ease infinite;
+
+}
+
+@keyframes gradientFlow{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ========================= */
+/* BURBUJAS DECORATIVAS      */
+/* ========================= */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.floating{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    opacity:.20;
+
+    animation:floatBubble 12s infinite ease-in-out;
+
+}
+
+.floating1{
+
+    width:180px;
+    height:180px;
+
+    background:#ff9ed2;
+
+    left:5%;
+    top:10%;
+
+}
+
+.floating2{
+
+    width:240px;
+    height:240px;
+
+    background:#ffd6ea;
+
+    right:5%;
+    top:18%;
+
+    animation-delay:2s;
+
+}
+
+.floating3{
+
+    width:160px;
+    height:160px;
+
+    background:#ffc7e2;
+
+    left:18%;
+    bottom:10%;
+
+    animation-delay:4s;
+
+}
+
+.floating4{
+
+    width:220px;
+    height:220px;
+
+    background:#ffe7f4;
+
+    right:10%;
+    bottom:5%;
+
+    animation-delay:1s;
+
+}
+
+@keyframes floatBubble{
+
+    50%{
+
+        transform:
+        translateY(-20px)
+        translateX(15px);
+
+    }
+
+}
+
+/* ========================= */
+/* TARJETA PRINCIPAL         */
+/* ========================= */
+
+.container{
+
+    width:100%;
+    max-width:560px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    background:
+    rgba(255,255,255,.42);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+
+    0 15px 45px rgba(240,61,151,.15),
+
+    0 3px 12px rgba(0,0,0,.05);
+
+    text-align:center;
+
+}
+
+/* ========================= */
+/* LOGO                      */
+/* ========================= */
+
+.logo{
+
+    width:95%;
+    max-width:430px;
+
+    margin-bottom:15px;
+
+    animation:
+    logoFloat 5s ease-in-out infinite;
+
+    filter:
+    drop-shadow(
+    0 15px 25px
+    rgba(240,61,151,.22)
+    );
+
+}
+
+@keyframes logoFloat{
+
+    50%{
+
+        transform:
+        translateY(-10px);
+
+    }
+
+}
+
+/* ========================= */
+/* SALUDO                    */
+/* ========================= */
+
+.greeting{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#ef4b9b;
+
+    margin-bottom:8px;
+
+}
+
+/* ========================= */
+/* RELOJ                     */
+/* ========================= */
+
+.clock{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    color:#ef4b9b;
+
+    letter-spacing:-2px;
+
+}
+
+/* ========================= */
+/* FECHA                     */
+/* ========================= */
+
+.date{
+
+    margin-top:5px;
+
+    margin-bottom:20px;
+
+    color:#777;
+
+    font-size:18px;
+
+}
+
+/* ========================= */
+/* MENSAJES                  */
+/* ========================= */
+
+.welcome{
+
+    min-height:40px;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    color:#666;
+
+    transition:opacity .4s ease;
+
+}
+
+/* ========================= */
+/* BOTONES                   */
+/* ========================= */
+
+.btn{
+
+    display:block;
+
+    text-decoration:none;
+
+    margin-bottom:16px;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    background:
+    rgba(239,75,155,.92);
+
+    border:1px solid
+    rgba(255,255,255,.25);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+
+    0 10px 20px
+    rgba(239,75,155,.20);
+
+    transition:
+    transform .18s,
+    box-shadow .18s;
+
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.02);
+
+}
+
+.btn:active{
+
+    transform:
+    scale(.96);
+
+}
+
+/* ========================= */
+/* BOTÓN DORADO              */
+/* ========================= */
+
+.btn-gold{
+
+    background:
+    linear-gradient(
+    135deg,
+    #FFD700,
+    #FFC107,
+    #FFE082,
+    #F4B400
+    );
+
+    color:#6f4f00;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-gold::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100px;
+    height:100%;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.8),
+    transparent
+    );
+
+    animation:
+    shine 3s infinite;
+
+}
+
+@keyframes shine{
+
+    100%{
+
+        left:140%;
+
+    }
+
+}
+
+/* ========================= */
+/* FRASE INSPIRADORA         */
+/* ========================= */
+
+.quote{
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.35);
+
+    color:#777;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    transition:
+    opacity .4s ease;
+
+}
+
+/* ========================= */
+/* STATUS                    */
+/* ========================= */
+
+.status{
+
+    margin-top:15px;
+
+    color:#27ae60;
+
+    font-weight:700;
+
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+footer{
+
+    margin-top:25px;
+
+    color:#999;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/* ========================= */
+/* REDMI                     */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .btn{
+
+        font-size:22px;
+
+        padding:20px;
+
+    }
+
+    .clock{
+
+        font-size:50px;
+
+    }
+
+}
