@@ -1,6 +1,6 @@
 /* ========================= */
 /* MOVE DANCE ACADEMY        */
-/* RECEPCIÓN PREMIUM         */
+/* RECEPCIÃ“N PREMIUM         */
 /* ========================= */
 
 *{
@@ -13,7 +13,7 @@ html,
 body{
 
     width:100%;
-    min-height:100vh;
+    min-height:100dvh;
 
     font-family:'Poppins',sans-serif;
 
@@ -31,7 +31,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:25px;
+    padding:clamp(14px,4vw,25px);
 
     background:
     linear-gradient(
@@ -94,8 +94,8 @@ body{
 
 .floating1{
 
-    width:180px;
-    height:180px;
+    width:min(180px,35vw);
+    height:min(180px,35vw);
 
     background:#ff9ed2;
 
@@ -106,8 +106,8 @@ body{
 
 .floating2{
 
-    width:240px;
-    height:240px;
+    width:min(240px,42vw);
+    height:min(240px,42vw);
 
     background:#ffd6ea;
 
@@ -120,22 +120,20 @@ body{
 
 .floating3{
 
-    width:160px;
-    height:160px;
+    width:min(160px,32vw);
+    height:min(160px,32vw);
 
     background:#ffc7e2;
 
     left:18%;
     bottom:10%;
 
-    animation-delay:4s;
-
 }
 
 .floating4{
 
-    width:220px;
-    height:220px;
+    width:min(220px,40vw);
+    height:min(220px,40vw);
 
     background:#ffe7f4;
 
@@ -167,9 +165,9 @@ body{
     width:100%;
     max-width:560px;
 
-    padding:35px;
+    padding:clamp(18px,5vw,35px);
 
-    border-radius:35px;
+    border-radius:clamp(20px,5vw,35px);
 
     background:
     rgba(255,255,255,.42);
@@ -227,7 +225,7 @@ body{
 
 .greeting{
 
-    font-size:28px;
+    font-size:clamp(18px,5.5vw,28px);
 
     font-weight:700;
 
@@ -243,7 +241,7 @@ body{
 
 .clock{
 
-    font-size:58px;
+    font-size:clamp(36px,11vw,58px);
 
     font-weight:800;
 
@@ -265,7 +263,7 @@ body{
 
     color:#777;
 
-    font-size:18px;
+    font-size:clamp(13px,3.5vw,18px);
 
 }
 
@@ -279,7 +277,7 @@ body{
 
     margin-bottom:20px;
 
-    font-size:22px;
+    font-size:clamp(15px,4.5vw,22px);
 
     color:#666;
 
@@ -299,13 +297,13 @@ body{
 
     margin-bottom:16px;
 
-    padding:22px;
+    padding:clamp(14px,4.5vw,22px);
 
-    border-radius:24px;
+    border-radius:clamp(16px,5vw,24px);
 
     color:white;
 
-    font-size:26px;
+    font-size:clamp(16px,4.8vw,26px);
 
     font-weight:700;
 
@@ -344,7 +342,7 @@ body{
 }
 
 /* ========================= */
-/* BOTÓN DORADO              */
+/* BOTÃ“N DORADO              */
 /* ========================= */
 
 .btn-gold{
@@ -410,7 +408,7 @@ body{
 
     margin-top:18px;
 
-    padding:16px;
+    padding:clamp(10px,3vw,16px);
 
     border-radius:20px;
 
@@ -419,7 +417,7 @@ body{
 
     color:#777;
 
-    font-size:18px;
+    font-size:clamp(13px,3.5vw,18px);
 
     font-style:italic;
 
@@ -440,6 +438,8 @@ body{
 
     font-weight:700;
 
+    font-size:clamp(13px,3.5vw,16px);
+
 }
 
 /* ========================= */
@@ -452,29 +452,74 @@ footer{
 
     color:#999;
 
-    font-size:18px;
+    font-size:clamp(13px,3.5vw,18px);
 
     font-weight:600;
 
 }
 
 /* ========================= */
-/* REDMI                     */
+/* RESPONSIVE EXTRA          */
 /* ========================= */
 
-@media(max-width:600px){
+/* Celulares muy angostos */
+@media(max-width:360px){
 
-    .btn{
+    .container{
 
-        font-size:22px;
-
-        padding:20px;
+        padding:16px;
 
     }
 
-    .clock{
+    .btn{
 
-        font-size:50px;
+        margin-bottom:12px;
+
+    }
+
+}
+
+/* Pantallas bajitas (horizontal, o poco alto disponible):
+   permite scroll y reduce espacios verticales */
+@media(max-height:700px){
+
+    body{
+
+        align-items:flex-start;
+
+        overflow-y:auto;
+
+    }
+
+    .container{
+
+        margin:12px auto;
+
+    }
+
+    .logo{
+
+        max-width:220px;
+
+        margin-bottom:8px;
+
+    }
+
+    .btn{
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+/* Pantallas grandes (tablet/desktop en recepciÃ³n):
+   evita que el texto crezca demasiado y se vea gigante */
+@media(min-width:900px){
+
+    .container{
+
+        max-width:600px;
 
     }
 
