@@ -2,37 +2,26 @@
 /* MOVE DANCE ACADEMY        */
 /* RECEPCIÃ“N PREMIUM         */
 /* ========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html,
 body{
-
     width:100%;
     min-height:100dvh;
-
     font-family:'Poppins',sans-serif;
-
     overflow-x:hidden;
-
 }
-
 /* ========================= */
 /* FONDO PREMIUM             */
 /* ========================= */
-
 body{
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:clamp(14px,4vw,25px);
-
     background:
     linear-gradient(
         -45deg,
@@ -42,311 +31,184 @@ body{
         #fff0fa,
         #ffffff
     );
-
     background-size:400% 400%;
-
     animation:gradientFlow 20s ease infinite;
-
 }
-
 @keyframes gradientFlow{
-
     0%{
         background-position:0% 50%;
     }
-
     50%{
         background-position:100% 50%;
     }
-
     100%{
         background-position:0% 50%;
     }
-
 }
-
 /* ========================= */
 /* BURBUJAS DECORATIVAS      */
 /* ========================= */
-
 .background{
-
     position:fixed;
     inset:0;
-
     pointer-events:none;
-
 }
-
 .floating{
-
     position:fixed;
-
     border-radius:50%;
-
     filter:blur(40px);
-
     opacity:.20;
-
     animation:floatBubble 12s infinite ease-in-out;
-
 }
-
 .floating1{
-
     width:min(180px,35vw);
     height:min(180px,35vw);
-
     background:#ff9ed2;
-
     left:5%;
     top:10%;
-
 }
-
 .floating2{
-
     width:min(240px,42vw);
     height:min(240px,42vw);
-
     background:#ffd6ea;
-
     right:5%;
     top:18%;
-
     animation-delay:2s;
-
 }
-
 .floating3{
-
     width:min(160px,32vw);
     height:min(160px,32vw);
-
     background:#ffc7e2;
-
     left:18%;
     bottom:10%;
-
 }
-
 .floating4{
-
     width:min(220px,40vw);
     height:min(220px,40vw);
-
     background:#ffe7f4;
-
     right:10%;
     bottom:5%;
-
     animation-delay:1s;
-
 }
-
 @keyframes floatBubble{
-
     50%{
-
         transform:
         translateY(-20px)
         translateX(15px);
-
     }
-
 }
-
 /* ========================= */
 /* TARJETA PRINCIPAL         */
 /* ========================= */
-
 .container{
-
     width:100%;
     max-width:560px;
-
     padding:clamp(18px,5vw,35px);
-
     border-radius:clamp(20px,5vw,35px);
-
     background:
     rgba(255,255,255,.42);
-
     backdrop-filter:blur(18px);
-
     -webkit-backdrop-filter:blur(18px);
-
     box-shadow:
-
     0 15px 45px rgba(240,61,151,.15),
-
     0 3px 12px rgba(0,0,0,.05);
-
     text-align:center;
-
 }
-
 /* ========================= */
 /* LOGO                      */
 /* ========================= */
-
 .logo{
-
     width:95%;
     max-width:430px;
-
     margin-bottom:15px;
-
     animation:
     logoFloat 5s ease-in-out infinite;
-
     filter:
     drop-shadow(
     0 15px 25px
     rgba(240,61,151,.22)
     );
-
 }
-
 @keyframes logoFloat{
-
     50%{
-
         transform:
         translateY(-10px);
-
     }
-
 }
-
 /* ========================= */
 /* SALUDO                    */
 /* ========================= */
-
 .greeting{
-
     font-size:clamp(18px,5.5vw,28px);
-
     font-weight:700;
-
     color:#ef4b9b;
-
     margin-bottom:8px;
-
 }
-
 /* ========================= */
 /* RELOJ                     */
 /* ========================= */
-
 .clock{
-
     font-size:clamp(36px,11vw,58px);
-
     font-weight:800;
-
     color:#ef4b9b;
-
     letter-spacing:-2px;
-
 }
-
 /* ========================= */
 /* FECHA                     */
 /* ========================= */
-
 .date{
-
     margin-top:5px;
-
     margin-bottom:20px;
-
     color:#777;
-
     font-size:clamp(13px,3.5vw,18px);
-
 }
-
 /* ========================= */
 /* MENSAJES                  */
 /* ========================= */
-
 .welcome{
-
     min-height:40px;
-
     margin-bottom:20px;
-
     font-size:clamp(15px,4.5vw,22px);
-
     color:#666;
-
     transition:opacity .4s ease;
-
 }
-
 /* ========================= */
 /* BOTONES                   */
 /* ========================= */
-
 .btn{
-
     display:block;
-
     text-decoration:none;
-
     margin-bottom:16px;
-
     padding:clamp(14px,4.5vw,22px);
-
     border-radius:clamp(16px,5vw,24px);
-
     color:white;
-
     font-size:clamp(16px,4.8vw,26px);
-
     font-weight:700;
-
     background:
     rgba(239,75,155,.92);
-
     border:1px solid
     rgba(255,255,255,.25);
-
     backdrop-filter:blur(12px);
-
     box-shadow:
-
     0 10px 20px
     rgba(239,75,155,.20);
-
     transition:
     transform .18s,
     box-shadow .18s;
-
 }
-
 .btn:hover{
-
     transform:
     translateY(-3px)
     scale(1.02);
-
 }
-
 .btn:active{
-
     transform:
     scale(.96);
-
 }
-
 /* ========================= */
 /* BOTÃ“N DORADO              */
 /* ========================= */
-
 .btn-gold{
-
     background:
     linear-gradient(
     135deg,
@@ -355,172 +217,111 @@ body{
     #FFE082,
     #F4B400
     );
-
     color:#6f4f00;
-
     position:relative;
-
     overflow:hidden;
-
 }
-
 .btn-gold::before{
-
     content:"";
-
     position:absolute;
-
     top:0;
     left:-120%;
-
     width:100px;
     height:100%;
-
     background:
-
     linear-gradient(
     90deg,
     transparent,
     rgba(255,255,255,.8),
     transparent
     );
-
     animation:
     shine 3s infinite;
-
 }
-
 @keyframes shine{
-
     100%{
-
         left:140%;
-
     }
-
 }
-
+/* ========================= */
+/* BOTÃ“N BIOMÃ‰TRICO          */
+/* ========================= */
+.btn-biometrico{
+    background:
+    linear-gradient(
+    135deg,
+    #22c1a4,
+    #1aa3c9
+    );
+    color:#ffffff;
+}
 /* ========================= */
 /* FRASE INSPIRADORA         */
 /* ========================= */
-
 .quote{
-
     margin-top:18px;
-
     padding:clamp(10px,3vw,16px);
-
     border-radius:20px;
-
     background:
     rgba(255,255,255,.35);
-
     color:#777;
-
     font-size:clamp(13px,3.5vw,18px);
-
     font-style:italic;
-
     transition:
     opacity .4s ease;
-
 }
-
 /* ========================= */
 /* STATUS                    */
 /* ========================= */
-
 .status{
-
     margin-top:15px;
-
     color:#27ae60;
-
     font-weight:700;
-
     font-size:clamp(13px,3.5vw,16px);
-
 }
-
 /* ========================= */
 /* FOOTER                    */
 /* ========================= */
-
 footer{
-
     margin-top:25px;
-
     color:#999;
-
     font-size:clamp(13px,3.5vw,18px);
-
     font-weight:600;
-
 }
-
 /* ========================= */
 /* RESPONSIVE EXTRA          */
 /* ========================= */
-
 /* Celulares muy angostos */
 @media(max-width:360px){
-
     .container{
-
         padding:16px;
-
     }
-
     .btn{
-
         margin-bottom:12px;
-
     }
-
 }
-
 /* Pantallas bajitas (horizontal, o poco alto disponible):
    permite scroll y reduce espacios verticales */
 @media(max-height:700px){
-
     body{
-
         align-items:flex-start;
-
         overflow-y:auto;
-
     }
-
     .container{
-
         margin:12px auto;
-
     }
-
     .logo{
-
         max-width:220px;
-
         margin-bottom:8px;
-
     }
-
     .btn{
-
         margin-bottom:10px;
-
     }
-
 }
-
 /* Pantallas grandes (tablet/desktop en recepciÃ³n):
    evita que el texto crezca demasiado y se vea gigante */
 @media(min-width:900px){
-
     .container{
-
         max-width:600px;
-
     }
-
 }
