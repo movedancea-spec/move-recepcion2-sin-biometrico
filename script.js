@@ -131,12 +131,15 @@ document.getElementById("greeting");
 
 function updateDateTime(){
 
+    // Todo en hora de Guatemala (no la de la tablet, que puede tener
+    // mal la zona horaria): hora, fecha y el saludo según la hora.
     const now = new Date();
 
     const time =
     now.toLocaleTimeString(
         "es-GT",
         {
+            timeZone:"America/Guatemala",
             hour:"2-digit",
             minute:"2-digit"
         }
@@ -152,6 +155,7 @@ function updateDateTime(){
     now.toLocaleDateString(
         "es-GT",
         {
+            timeZone:"America/Guatemala",
             weekday:"long",
             day:"numeric",
             month:"long",
@@ -167,8 +171,19 @@ function updateDateTime(){
 
     }
 
+    // Hora de 0 a 23 en Guatemala (hourCycle "h23" para que la
+    // medianoche sea 0 y no 24).
     const hour =
-    now.getHours();
+    Number(
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:"America/Guatemala",
+                hour:"numeric",
+                hourCycle:"h23"
+            }
+        ).format(now)
+    );
 
     let greetingText =
     "";
@@ -208,6 +223,91 @@ updateDateTime();
 setInterval(
     updateDateTime,
     1000
+);
+
+
+/* BOTÓN CAJA DE ENTRADAS (solo en temporada de venta) */
+
+// Recepción lo enciende o apaga en su panel ("🎟️ Venta de entradas").
+// Como esta pantalla se queda prendida todo el día, se le pregunta al
+// Worker cada minuto (y al volver a la pantalla): el botón aparece o
+// desaparece solo, sin recargar. Si el Worker no responde, tarda más
+// de 10 s o contesta algo raro, el botón queda OCULTO (más seguro que
+// mostrarlo). El botón solo abre la caja; la caja sigue pidiendo su
+// propia clave.
+
+const WORKER_URL =
+"https://portalalumnas.movedancea.workers.dev";
+
+const btnCajaEntradas =
+document.getElementById("btnCajaEntradas");
+
+async function revisarVentaEntradas(){
+
+    let visible = false;
+
+    try{
+
+        const controlador = new AbortController();
+
+        const espera = setTimeout(
+            ()=>controlador.abort(),
+            10000
+        );
+
+        const resp = await fetch(
+            WORKER_URL,
+            {
+                method:"POST",
+                headers:{ "Content-Type":"application/json" },
+                body:JSON.stringify({ accion:"ventaEntradasVisible" }),
+                signal:controlador.signal
+            }
+        );
+
+        clearTimeout(espera);
+
+        const datos = await resp.json();
+
+        visible =
+        resp.ok &&
+        datos.success === true &&
+        datos.activa === true;
+
+    }
+
+    catch(e){
+
+        visible = false;
+
+    }
+
+    if(btnCajaEntradas){
+
+        btnCajaEntradas.hidden = !visible;
+
+    }
+
+}
+
+revisarVentaEntradas();
+
+setInterval(
+    revisarVentaEntradas,
+    60000
+);
+
+document.addEventListener(
+    "visibilitychange",
+    ()=>{
+
+        if(document.visibilityState === "visible"){
+
+            revisarVentaEntradas();
+
+        }
+
+    }
 );
 
 

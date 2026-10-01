@@ -256,6 +256,26 @@ body{
     color:#ffffff;
 }
 /* ========================= */
+/* BOTÓN CAJA DE ENTRADAS    */
+/* ========================= */
+/* Rosa de la marca, un poco más intenso que los demás para que se
+   distinga. Solo se ve en temporada de venta (ver script.js). */
+.btn-entradas{
+    background:
+    linear-gradient(
+    135deg,
+    #ff72b7,
+    #ef4b9b,
+    #d6337f
+    );
+    color:#ffffff;
+}
+/* .btn usa display:block, que le ganaría al atributo hidden: sin esta
+   regla el botón de entradas nunca se ocultaría. */
+[hidden]{
+    display:none !important;
+}
+/* ========================= */
 /* FRASE INSPIRADORA         */
 /* ========================= */
 .quote{
